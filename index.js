@@ -75,7 +75,27 @@ export const burger = {
   category: "Lunch", 
   /*Your code here*/
 }
-
+discount: function(discountString) {
+  let discountPrice;
+  if (discountString === 'teacher')
+    {
+      discountPrice = this.price - (this.price * .25);
+      console.log(discountPrice);
+      return(discountPrice);
+    }
+  else if (discountString) === 'public')
+    {
+      discountPrice = this.price - (this.price * .10);
+      console.log(discountPrice);
+      return(discountPrice);
+    }
+  else
+    {
+      discount = this.price;
+      console.log(discountPrice);
+      return(discountPrice);
+    }
+}
 
 
 ///////////////Reviews (MVP)///////////////////
@@ -132,9 +152,11 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(reviewArray, indexLoc) {
+  return(reviewArray[indexLoc].name + 'Gave the restaurant a' + reviewArray[indexLoc].rating + 'star review, and their feedback was: ' + reviewArray[indexLoc].feedback);
 }
+
+getReviewByIndex(reviews, 0);
 
 
   
@@ -151,8 +173,9 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview(reviewArray) {
+  let indexLoc = (reviewArray.length -1)
+  return(eviewArray[indexLoc].name + 'Gave the restaurant a' + reviewArray[indexLoc].rating + 'star review, and their feedback was: ' + reviewArray[indexLoc].feedback);
 } 
 
 
